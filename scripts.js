@@ -683,10 +683,12 @@
         ];
 
         function initProjects() {
+            var VISIBLE_DEFAULT = 3;
             var grid = document.getElementById('projects-grid');
             projects.forEach(function(p, i) {
                 var card = document.createElement('div');
-                card.className = 'card p-5 fade-up';
+                card.className = 'card p-5 fade-up project-col';
+                card.dataset.index = i;
                 card.style.transitionDelay = (i % 3 * 0.1) + 's';
                 card.innerHTML =
                     '<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div style="width:44px;height:44px;border-radius:12px;background:' +
@@ -704,6 +706,44 @@
                 setTimeout(function() {
                     drawProjectChart(i, p);
                 }, 600 + i * 100);
+            });
+
+            var total = projects.length;
+            if (total <= VISIBLE_DEFAULT) return;
+
+            var btn = document.createElement('button');
+            btn.id = 'view-toggle-btn';
+            btn.textContent = 'View All Projects →';
+            btn.style.cssText = 'display:flex;align-items:center;gap:8px;margin:40px auto 0;padding:12px 28px;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font-family:Outfit,sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .25s, color .25s, box-shadow .25s;';
+            btn.addEventListener('mouseenter', function() {
+                btn.style.borderColor = 'var(--accent)';
+                btn.style.color = 'var(--accent)';
+                btn.style.boxShadow = '0 0 0 3px rgba(79,70,229,.12)';
+            });
+            btn.addEventListener('mouseleave', function() {
+                btn.style.borderColor = 'var(--border)';
+                btn.style.color = 'var(--text)';
+                btn.style.boxShadow = 'none';
+            });
+
+            var expanded = false;
+            function applyVisibility() {
+                var cols = grid.querySelectorAll('.project-col');
+                cols.forEach(function(col, i) {
+                    col.style.display = expanded || i < VISIBLE_DEFAULT ? '' : 'none';
+                });
+            }
+
+            applyVisibility();
+            grid.parentElement.appendChild(btn);
+
+            btn.addEventListener('click', function() {
+                expanded = !expanded;
+                applyVisibility();
+                btn.textContent = expanded ? 'Show Less ↑' : 'View All Projects →';
+                if (!expanded) {
+                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         }
 

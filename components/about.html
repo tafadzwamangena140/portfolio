@@ -1,0 +1,72 @@
+<section id="about" class="py-24" style="background:var(--surface);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Profile photo -->
+                <div class="lg:col-span-3 flex flex-col items-center fade-up" style="padding-top:16px;">
+                    <div class="profile-photo-wrap" style="margin-bottom:30px;">
+                        <div class="profile-ring"></div>
+                        <img src="https://ui-avatars.com/api/?name=Tafadzwa+Mangena&background=4F46E5&color=fff&size=320&bold=true&font-size=0.32&rounded=true"
+                            alt="Tafadzwa Mangena" class="profile-photo" />
+                        <div class="profile-badge"><span class="dot-blink"
+                                style="width:6px;height:6px;flex-shrink:0;"></span><span>Available</span></div>
+                    </div>
+                    <div class="flex gap-3 mb-5 mt-1">
+                        <a href="#" class="profile-social-btn" title="LinkedIn"><svg width="15"
+                                height="15" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
+                        <a href="#" class="profile-social-btn" title="GitHub"><svg width="15"
+                                height="15" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                            </svg></a>
+                        <a href="#" class="profile-social-btn" title="Twitter"><svg width="15"
+                                height="15" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            </svg></a>
+                    </div>
+                    <div class="flex flex-col gap-2 w-full">
+                        <div class="profile-stat-chip"><span>🎓</span><span style="font-size:12px;">BBA
+                                Graduate</span></div>
+                        <div class="profile-stat-chip"><span>🌍</span><span style="font-size:12px;">Zimbabwe ·
+                                Remote</span></div>
+                        <div class="profile-stat-chip"><span>💼</span><span style="font-size:12px;">Freelance &amp;
+                                Full-time</span></div>
+                    </div>
+                </div>
+                <!-- Bio + skills -->
+                <div class="lg:col-span-9 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                    <div class="fade-up fade-up-d1">
+                        <div class="section-label mb-4">About Me</div>
+                        <h2 class="font-display text-4xl md:text-5xl font-bold mb-6"
+                            style="font-weight:700;line-height:1.1;">Analyst. Storyteller.<br /><span
+                                class="grad-text">Problem Solver.</span></h2>
+                        <p style="color:var(--muted);line-height:1.8;margin-bottom:20px;font-weight:300;">With 5+ years
+                            turning raw data into revenue-driving strategies, I specialize in transforming complex
+                            datasets into executive-ready dashboards and reports. I've worked across e-commerce,
+                            finance, and SaaS industries.</p>
+                        <p style="color:var(--muted);line-height:1.8;font-weight:300;">My toolkit spans from SQL
+                            queries to machine learning models, always focused on the "so what?" behind the numbers.
+                            Every chart I build tells a story; every insight I deliver drives a decision.</p>
+                        <div class="flex flex-wrap gap-3 mt-8"><span class="tag">SQL</span><span
+                                class="tag">Python</span><span class="tag">Power BI</span><span
+                                class="tag">Excel/VBA</span><span class="tag">Tableau</span><span
+                                class="tag">R</span><span class="tag">Pandas</span><span class="tag">Google
+                                Analytics</span></div>
+                    </div>
+                    <div class="fade-up fade-up-d2">
+                        <div class="card p-6">
+                            <h3
+                                style="font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--text);margin-bottom:20px;">
+                                Skill Proficiency</h3>
+                            <div id="skills-bars"></div>
+                            <div style="height:200px;margin-top:24px;"><canvas id="skillsRadar"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
