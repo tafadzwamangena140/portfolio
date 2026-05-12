@@ -11,11 +11,23 @@ function initNav() {
             if (l.getAttribute('href') === '#' + cur) l.classList.add('active');
         });
     });
-    document.getElementById('hamburger').addEventListener('click', function() {
-        document.getElementById('mobile-menu').classList.toggle('open');
+    var hamburger = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+            mobileMenu.classList.toggle('open');
+        });
+    }
+    links.forEach(function(link) {
+        link.addEventListener('click', function() {
+            if (mobileMenu && mobileMenu.classList.contains('open')) {
+                mobileMenu.classList.remove('open');
+            }
+        });
     });
 }
 
 function closeMobile() {
-    document.getElementById('mobile-menu').classList.remove('open');
+    var menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.remove('open');
 }
